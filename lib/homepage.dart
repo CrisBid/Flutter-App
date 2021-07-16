@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/fun1.dart';
 import 'package:flutter_application_1/fun2.dart';
 import 'package:flutter_application_1/fun3.dart';
+import 'package:flutter_application_1/fun3test.dart';
+import 'package:flutter_application_1/funesp1.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -47,6 +49,19 @@ class HomePage extends StatelessWidget {
                         builder: (BuildContext context) => Fun3()));
               },
               child: Text("Função 3"),
+              color: Colors.black,
+              textColor: Colors.white,
+            )),
+          ),
+          Center(
+            child: (FlatButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) => Fun3T()));
+              },
+              child: Text("Função 3 Test"),
               color: Colors.black,
               textColor: Colors.white,
             )),
