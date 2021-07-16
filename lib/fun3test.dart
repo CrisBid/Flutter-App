@@ -3,11 +3,10 @@ import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert';
 
-String Cidade = "São Gotardo,MG";
-
-var request = "https://api.hgbrasil.com/weather?key=49adb3f3&city_name=$Cidade";
-
 Future<Map> getData() async {
+  String Cidade = "São Gotardo,MG";
+  var request =
+      "https://api.hgbrasil.com/weather?key=49adb3f3&city_name=$Cidade";
   http.Response response = await http.get(request);
   return json.decode(response.body);
 }
@@ -19,8 +18,10 @@ class Fun3T extends StatefulWidget {
 
 class _Fun3TState extends State<Fun3T> {
   int Temp;
+  double Tamanho1;
   String City = "";
   String Desc = "";
+  String pre = "";
 
   @override
   Widget build(BuildContext context) {
@@ -111,6 +112,7 @@ class _Fun3TState extends State<Fun3T> {
                             fontSize: 25.0,
                           ),
                         ),
+                        buildText(City, pre, 25.0)
                       ],
                     ),
                   );
@@ -119,4 +121,14 @@ class _Fun3TState extends State<Fun3T> {
           }),
     );
   }
+}
+
+Widget buildText(String Textinho, String prefix, double Tamanho1) {
+  return Text(
+    "$Textinho $prefix",
+    style: TextStyle(
+      color: Colors.white,
+      fontSize: Tamanho1,
+    ),
+  );
 }
