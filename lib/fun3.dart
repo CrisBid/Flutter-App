@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 import 'dart:async';
 import 'dart:convert';
 
-const request = "https://api.hgbrasil.com/finance?format=json&key=d13759ba";
+const request = "https://api.hgbrasil.com/finance?format=json&key=70dcfc99";
 
 Future<Map> getData() async {
   http.Response response = await http.get(request);
